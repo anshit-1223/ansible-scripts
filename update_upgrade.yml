@@ -1,0 +1,12 @@
+---
+  - name: Updating and Upgrading Packages
+    hosts: webservers
+    become: yes
+    tasks: 
+      - name: Updating Packages
+        apt: 
+          update_cache: yes
+
+      -  name: Upgrading Packages
+         apt:
+          upgrade: full
