@@ -10,4 +10,5 @@
     - name: Installing the packages
       apt:
         name: "{{ mykgs }}"
+        state: present
 ...
