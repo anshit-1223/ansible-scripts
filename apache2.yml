@@ -1,0 +1,15 @@
+---
+  - name: Install Apache2 Server
+    hosts: nodes
+    become: yes
+    tasks:
+      - name: Update Packages
+        apt:
+          update_cache: yes
+      - name: Installing Apache Server
+        apt:
+          name: apache2
+          state: present
+      - name: Start Apache
+        command: service apache2 start
+          
