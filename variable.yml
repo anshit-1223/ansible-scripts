@@ -1,0 +1,11 @@
+---
+- name: Ansible Built-in Variables
+  hosts: nodes
+  tasks:
+  - name: "inventory_hostname variable"
+    debug:
+      msg: "{{ inventory_hostname }}"
+  - name: "hostvars variable"
+    debug:
+      msg: "{{ hostvars }}"
+...
