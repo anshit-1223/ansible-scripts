@@ -1,0 +1,10 @@
+---
+- name: Ansible User Defined Variable
+  hosts: nodes
+  vars:
+    salutations: Hello Everyone
+  tasks:
+    - name: Example of user defined variable  
+      debug:
+        msg: "{{ salutations }}"
+...
