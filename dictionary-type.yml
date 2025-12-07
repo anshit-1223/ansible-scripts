@@ -1,0 +1,16 @@
+---
+- name: Dictionary/Mapping type Variable
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Create a user
+      user:
+        name: "{{ item.name }}"
+        uid:  "{{ item.uid }}"
+        state: present
+      loop:
+        - name: anshit
+          uid: 1002
+        - name: aman
+          uid: 1003
+...          
