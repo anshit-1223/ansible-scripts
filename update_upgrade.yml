@@ -1,6 +1,6 @@
 ---
   - name: Updating and Upgrading Packages
-    hosts: webservers
+    hosts: nodes
     become: yes
     tasks: 
       - name: Updating Packages
