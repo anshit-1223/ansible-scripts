@@ -1,0 +1,14 @@
+---
+- name: List Type Variable
+  hosts: nodes
+  become: yes
+  vars:
+    mykgs:
+      - htop
+      - speedtest-cli
+  tasks:
+    - name: Installing the packages
+      apt:
+        name: "{{ mykgs[1] }}"
+        state: present
+...
