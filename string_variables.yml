@@ -1,0 +1,17 @@
+---
+- name: String Variables
+  hosts: webservers
+  become: yes
+  vars:
+    apache: apache2
+    apache_dir: /var/www/html
+  tasks:
+  - name: Installing "{{ apache }}" server
+    apt:
+      name: apache2
+      state: present
+  - name: Copying index.html in "{{ apache_dir }}"
+    copy:
+      src: index.html
+      dest: "{{ apache_dir }}/index.html"
+...
