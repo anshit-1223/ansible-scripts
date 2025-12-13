@@ -1,0 +1,10 @@
+---
+ - name: Boolean Variable in Ansible
+   hosts: webservers
+   become: yes
+   vars:
+    is_enabled: true
+   tasks:    
+     - name: Printing Boolena Variable Value
+       debug:
+        msg: "{{ is_enabled }}"
