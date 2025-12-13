@@ -1,0 +1,15 @@
+---
+  - name: Environment Variable
+    hosts: all
+    become: yes
+    environment:
+      EXAMPLE: "Playbook Level"
+    tasks:
+      - name: Print Playbook Level Variable
+        command: "echo $EXAMPLE"
+      - name: Print Task Level Variable
+        environment:
+          TASK_VAR: "Task Level"
+        command: echo $TASK_VAR
+      - name: TEST BOTH
+        command: echo $EXAMPLE $TASK_VAR
