@@ -8,3 +8,6 @@
      - name: Printing Boolena Variable Value
        debug:
         msg: "{{ is_enabled }}"
+     - name: Printing Value in vars
+       debug:
+         var: is_enabled
